@@ -1,0 +1,15 @@
+
+TESTDIR=.
+UNITDIR=..
+NTXDIR=$(UNITDIR)\..\ntx
+
+SOURCES=$(TESTDIR)\udomtest.dpr &
+$(TESTDIR)\udomtest_const.pas &
+$(TESTDIR)\udomtest_init.pas &
+$(UNITDIR)\microdom.pas &
+$(NTXDIR)\ntxConst.pas &
+$(NTXDIR)\ntxLog.pas &
+$(NTXDIR)\ntxTestUnit.pas &
+$(NTXDIR)\ntxTestResult.pas &
+$(TESTDIR)\FunctionsTest.pas &
+$(TESTDIR)\DomDocumentTest.pas
