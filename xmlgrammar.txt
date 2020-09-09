@@ -1,0 +1,27 @@
+xml ::= 	header? comment* doctype? comment* element comment*
+
+header ::= 	'<?xml' headerdata '?>'
+
+headerdata ::=	'version="<version>"'? 'encoding="<encoding>"'?
+		'standalone="yes|no"
+
+doctype ::= 	'<!DOCTYPE' dtddata '>'
+
+element ::= 	tag
+	      | opentag content closetag
+
+content ::=	text
+	      | element*
+	      | comment*
+
+tag ::=		'<' name attrs '/>'
+
+opentag ::=	'<' name attrs '>'
+
+attrs ::=	name '=' (" value "|' value ')
+
+closetag ::=	'</' name '>'
+
+comment ::=	'<!--' text '-->'
+
+text ::=	[^<>]*
