@@ -8,9 +8,9 @@ uses
 type
   TuDomElementList = class;
   TuDomElement = class(TObject)
-  {$IFDEF __TEST_}public{$ELSE}private{$ENDIF}
+  {$IFDEF __TEST__}public{$ELSE}private{$ENDIF}
     function GetValue: string;
-  {$IFDEF __TEST_}public{$ELSE}protected{$ENDIF}
+  {$IFDEF __TEST__}public{$ELSE}protected{$ENDIF}
     m_name: string;
     m_values: TStringList;
     m_nodes: TuDomElementList;
