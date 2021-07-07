@@ -1,6 +1,23 @@
-xml ::= 	header? comment* doctype? comment* element comment*
+document ::= 	prolog element Misc*
+
+prolog ::= 	header? Misc* (doctype Misc*)?
 
 header ::= 	'<?xml' headerdata '?>'
+
+Misc ::=	comment | S
+
+doctype ::=	'<!DOCTYPE' S
+		Name
+		(S ExternalID)? S?
+		('[' intSubset ']' S?) ?
+		'>'
+
+## Whitespace
+S ::=		#x9 | #xA | #xD | #x20
+
+comment ::=	'<!--' text '--!>'
+
+-----
 
 headerdata ::=	'version="<version>"'? 'encoding="<encoding>"'?
 		'standalone="yes|no"
